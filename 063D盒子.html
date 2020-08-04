@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D</title>
+    <style type="text/css">
+        #wrap{
+            width: 200px;
+            height: 200px;
+            /*border: solid 1px black;*/
+            /*镜头距离场景的距离*/
+            perspective: 800px;
+            position: relative;
+            margin: auto;
+            margin-top: 260px;
+        }
+        #di{
+            width: 200px;
+            height: 200px;
+            /*border: solid 1px black;*/
+            /*成为一个3D场景*/
+            transform-style:preserve-3d;
+            position: absolute;
+        }
+        #wrap #di div{
+            width: 200px;
+            height: 200px;
+            border: solid 1px black;
+            position: absolute;
+        }
+        #wrap #di .left{
+            /*延什么轴平移  旋转*/
+            transform: translateX(-200px) rotateY(90deg);
+            /*设置旋转轴*/
+            transform-origin: right;
+        }
+        #wrap #di .right{
+            /*延什么轴平移  旋转*/
+            transform: translateX(200px) rotateY(-90deg);
+            /*设置旋转轴*/
+            transform-origin: left;
+        }
+        #wrap #di .top{
+            /*延什么轴平移  旋转*/
+            transform: translateY(-200px) rotateX(-90deg);
+            /*设置旋转轴*/
+            transform-origin: bottom;
+        }
+        #wrap #di .bottom{
+            /*延什么轴平移  旋转*/
+            transform: translateY(200px) rotateX(90deg);
+            /*设置旋转轴*/
+            transform-origin: top;
+        }
+        #wrap #di .front{
+            /*延什么轴平移  旋转*/
+            transform: translateZ(200px);
+        }
+        #wrap #di:hover{
+            transform: rotateY(180deg);
+            /*过度*/
+            transition: 5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="di">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="front"></div>
+            <div class="after"></div>
+        </div>
+    </div>
+</body>
+</html>
